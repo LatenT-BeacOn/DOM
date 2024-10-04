@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM summery</title>
+</head>
+<body>
+     <!-- by onclick -->
+    <h1>Final DOM Handlers</h1>
+    <h3 id="handler-status">Default text</h3>
+    <button onclick="handleOnClicked()">handle event</button>
+   <!-- event listner -->
+   <button id="add_listener">handle event by addEventListener</button>
+
+   <!-- change with input value -->
+    <p id="input-field">Default input</p>
+   <input type="text" name="" id="input-text">
+   <button id="btn-update">Update</button>
+
+
+   <br>
+   <br>
+
+
+
+
+    <script>
+        // by onclick
+        function handleOnClicked(){
+           // console.log('button clicked');
+           const handler_stats=document.getElementById('handler-status');
+           handler_stats.innerText='change for click';
+
+        }
+
+        // by addEventListener
+        document.getElementById('add_listener').addEventListener('click',function(){
+            const handlerStatus= document.getElementById('handler-status');
+            handlerStatus.innerText='text changes for clicked';
+        })
+
+
+        //change with input value
+        document.getElementById('btn-update').addEventListener('click',function(){
+            const inputField=document.getElementById('input-text');
+            const inputText=inputField.value;
+            const p=document.getElementById('input-field')
+            p.innerText=inputText;
+            inputField.value='';
+
+        })
+
+    </script>
+    
+</body>
+</html>
